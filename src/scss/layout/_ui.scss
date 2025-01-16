@@ -1,0 +1,95 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.contenedor-app {
+  @include m.tablet {
+    @include m.grid(2, 1px);
+    min-height: 100vh;
+  }
+
+  .imagen {
+    height: 20rem;
+    background-image: url(../img/1.jpg);
+    background-size: cover;
+    background-position: center center;
+
+    @include m.tablet {
+      height: auto;
+    }
+  }
+
+  .app {
+    width: 95%;
+    margin: 0 auto;
+    padding: 3rem 0;
+    @include m.tablet {
+      overflow: scroll;
+    }
+  }
+}
+
+.nav {
+  display: block;
+
+  @include m.tablet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  p {
+    color: v.$blanco;
+    font-size: 2rem;
+    text-align: center;
+
+    span {
+      color: v.$azul-claro;
+      font-weight: v.$bold;
+    }
+
+    @include m.tablet {
+      span {
+        font-weight: v.$bold;
+
+        &::after {
+          content: "";
+          position: relative;
+          width: 70%;
+          border-bottom: 1px solid v.$azul;
+          display: block;
+          left: 50px;
+          padding-bottom: 3px;
+        }
+      }
+    }
+  }
+  .boton {
+    border-radius: 10px;
+  }
+}
+
+.barra-servicios {
+  margin-bottom: v.$separacion;
+
+  @include m.tablet {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .boton {
+    margin: 0 0 1rem 0;
+  }
+}
+
+.boton-atras {
+  margin-bottom: 5rem;
+
+  .atras {
+    color: v.$blanco;
+
+    &:hover {
+      color: v.$azul;
+      transition: color 0.3s ease;
+    }
+  }
+}
