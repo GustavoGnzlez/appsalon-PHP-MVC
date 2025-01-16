@@ -25,7 +25,7 @@ class AdminController
         $consulta .= " FROM citas  ";
         $consulta .= " LEFT OUTER JOIN usuarios ";
         $consulta .= " ON citas.usuarioId=usuarios.id  ";
-        $consulta .= " LEFT OUTER JOIN citasServicios ";
+        $consulta .= " LEFT OUTER JOIN citasservicios ";
         $consulta .= " ON citasservicios.citaId=citas.id ";
         $consulta .= " LEFT OUTER JOIN servicios ";
         $consulta .= " ON servicios.id=citasservicios.servicioId ";
