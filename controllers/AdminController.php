@@ -26,7 +26,7 @@ class AdminController
         $consulta .= " LEFT OUTER JOIN usuarios ";
         $consulta .= " ON citas.usuarioId=usuarios.id  ";
         $consulta .= " LEFT OUTER JOIN citasServicios ";
-        $consulta .= " ON citasServicios.citaId=citas.id ";
+        $consulta .= " ON citasservicios.citaId=citas.id ";
         $consulta .= " LEFT OUTER JOIN servicios ";
         $consulta .= " ON servicios.id=citasServicios.servicioId ";
         $consulta .= " WHERE fecha =  '{$fecha}' ";
